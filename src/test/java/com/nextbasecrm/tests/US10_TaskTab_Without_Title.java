@@ -94,4 +94,37 @@ public class US10_TaskTab_Without_Title {
         Assert.assertEquals(actualText,expectedText);
 
     }
+    @Test
+    public void task_without_title_marketingUser(){
+        // step1-user go to home page
+        WebElement inputUserName=driver.findElement(By.xpath("//input[@class='login-inp']"));
+        inputUserName.sendKeys("marketing38@cydeo.com");
+
+        WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
+        inputPassword.sendKeys("UserUser");
+        WebElement loginBtn= driver.findElement(By.xpath("//input[@class='login-btn']"));
+        loginBtn.click();
+        //step2-Click task button and see task table
+        WebElement TaskTAB=driver.findElement(By.xpath("//span[@id='feed-add-post-form-tab-tasks']"));
+        TaskTAB.click();
+        BrowserUtils.sleep(3);
+        //system display Task Tab
+        WebElement bodyTable= driver.findElement(By.xpath("//div[@id='fulloPostFormLHE_blogPostForm']"));
+        //Assert.assertTrue(bodyTable.isDisplayed());
+        System.out.println("bodyTable.isDisplayed() = " + bodyTable.isDisplayed());
+        //click send button
+
+
+        WebElement sendBtn= driver.findElement(By.xpath("//button[@id='blog-submit-button-save']"));
+        sendBtn.click();
+        BrowserUtils.sleep(2);
+        //step3-Verify error message
+        WebElement SystemError= driver.findElement(By.xpath("//div[@id='feed-add-post-content-tasks-container']/div"));
+        //System.out.println("SystemError.isDisplayed() = " + SystemError.isDisplayed());
+        //  Assert.assertTrue(SystemError.isDisplayed());
+        String expectedText="The task name is not specified.";
+        String actualText=SystemError.getText();
+        Assert.assertEquals(actualText,expectedText);
+
+    }
 }
