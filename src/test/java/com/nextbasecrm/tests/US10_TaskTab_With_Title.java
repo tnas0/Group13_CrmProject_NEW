@@ -69,6 +69,7 @@ public class US10_TaskTab_With_Title {
         // WebElement logout= driver.findElement(By.xpath("span=[@class='menu-popup-item-text']"));
         // logout.click();
     }
+    // second test case - Create Task with title and message with helpdesk User -POSITIVE SCENARIO
     @Test
     public void task_with_title_helpdeskUser(){
         //step1-user go to homepage
@@ -111,6 +112,7 @@ public class US10_TaskTab_With_Title {
         // WebElement logout= driver.findElement(By.xpath("span=[@class='menu-popup-item-text']"));
         // logout.click();
     }
+    //third test case - Create Task with title and message with Marketing User -POSITIVE SCENARIO
     @Test
     public void task_with_title_marketingUser(){
         //step1-user go to homepage
