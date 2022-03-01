@@ -27,4 +27,53 @@ public class US6_MoreTab {
 
     }
 
+    @Test  // Test with helpdesk39 credentials
+
+    public void nextBaseCrm_test1_helpdesk39() {
+        //Enter user credentials  as helpdesk39 user and click log in button
+        WebElement hrUserLogin = driver.findElement(By.xpath("//input[@placeholder='Login']"));
+        hrUserLogin.sendKeys("helpdesk39@cydeo.com");
+
+        //Enter password UserUser
+        WebElement password = driver.findElement(By.xpath("//input[@placeholder='Password']"));
+        password.sendKeys("UserUser");
+
+        // Navigate to logInButton and click
+        WebElement logInButton = driver.findElement(By.xpath("//input[@value='Log In']"));
+        logInButton.click();
+
+        // Navigate to MoreTab and click
+        WebElement MoreTab = driver.findElement(By.xpath("//span[@id='feed-add-post-form-link-text']"));
+        MoreTab.click();
+
+        WebElement moreTabContains = driver.findElement(By.className("menu-popup-items"));
+        System.out.println("moreTabContains.getText() = " + moreTabContains.getText());
+
+        //Four options should be displayed under the MORE tab:
+        //File
+        //Appreciation
+        //Announcement
+        //Workflow
+     /*   if (moreTabContains.getText().contains("File\n" +
+                "Appreciation\n" +
+                "Announcement\n" +
+                "Workflow")){
+            System.out.println("More tab contains all options, verification Passed!");
+        }else {
+            System.out.println("More Tab contains all options, verification Failed!");
+        }
+
+      */
+        String expectedResult = "File\n" +
+                "Appreciation\n" +
+                "Announcement\n" +
+                "Workflow";
+
+        String actualResult = moreTabContains.getText();
+
+        Assert.assertEquals(actualResult, expectedResult, "Verification Failed");
+
+        driver.close();
+    }
+
 }
