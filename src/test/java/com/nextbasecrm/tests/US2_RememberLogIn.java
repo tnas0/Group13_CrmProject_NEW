@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class US2_RememberLogIn{
+public class US2_RememberLogIn {
 
     WebDriver driver;
     String url = "https://login2.nextbasecrm.com/";
