@@ -32,7 +32,7 @@ public class US12_Messages_Announcements {
     public void send_message() throws InterruptedException {
         // 2- Enter username for login
         WebElement userName = driver.findElement(By.name("USER_LOGIN"));
-        userName.sendKeys("hr60@cydeo.com");
+        userName.sendKeys("hr38@cydeo.com");
         // 3- Enter password for login
         WebElement password = driver.findElement(By.name("USER_PASSWORD"));
         password.sendKeys("UserUser");
