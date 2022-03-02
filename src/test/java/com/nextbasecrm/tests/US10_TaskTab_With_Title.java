@@ -58,7 +58,7 @@ public class US10_TaskTab_With_Title {
 
     /*   WebElement message= driver.findElement(By.xpath("//div[@class='bxhtmled-dummy-target']"));
        message.sendKeys("Sample message");*/
-        //user click send button and create task successfully
+        //step4-user click send button and create task successfully
         WebElement sendBtn= driver.findElement(By.xpath("//button[@id='blog-submit-button-save']"));
         sendBtn.click();
         BrowserUtils.sleep(3);
